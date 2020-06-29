@@ -1,24 +1,20 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations?ref=lnav),
+an online curriculum for learing web development.
 
-Things you may want to cover:
+The goal of the project is to practice Rails associations and to work with
+the Active Record Gem of the framework.
 
-* Ruby version
+In the app Users can create and invite people to Events/Parties and those guests
+can then attend.
 
-* System dependencies
+!Spoiler: These are the data models I used to tackle this problem:
 
-* Configuration
+INSERT MODELS HERE
 
-* Database creation
+In the beginning I created the suggested "sign in" process which doesn't require
+password but afterwards I switched to a proper User model with the gem 'devise'.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The styling is done with ... and all extra credit so not included in the original
+project description.

@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
   end
 
   def new
@@ -17,8 +16,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      flash[:success] = "User successfully created"
       redirect_to user_path(@user)
     else
+      flash[:alert] = "There was an error while creating the User"
       render 'new'
     end
 

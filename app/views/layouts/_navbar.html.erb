@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <%= link_to 'Eventful', :root, class:'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarResponsive" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to 'Home', :root, class:'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Events', :root, class:'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Users', :root, class:'nav-link' %>
+        </li>
+        <li class="nav-item mx-5"></li>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', :root, class:'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign In', :root, class:'nav-link' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

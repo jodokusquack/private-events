@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if @current_user
       session[:user_id] = @current_user.id
-      redirect_to @current_user
+      redirect_back_or @current_user
     else
       flash[:alert] = "No User with that Email exists!"
       render 'new'

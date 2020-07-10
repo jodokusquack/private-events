@@ -12,3 +12,24 @@
  */
 
 @import "bootstrap";
+@import "users";
+
+
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}
+
+body {
+    background: #007bff;
+    background: linear-gradient(to right, #253884,
+        #ff3350);
+}
+
+#error_explanation {
+    color: #f00;
+    ul {
+        margin: 0 0 18px 0;
+    }
+}
+

@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 
     if @current_user
       session[:user_id] = @current_user.id
+      flash[:success] = "Successfully logged in."
       redirect_back_or @current_user
     else
       flash[:alert] = "No User with that Email exists!"
@@ -18,6 +19,8 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     @current_user = nil
+
+    flash[:success] = "Successfully logged out."
 
     redirect_to :root
   end

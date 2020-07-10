@@ -16,12 +16,21 @@
           <%= link_to 'Users', :root, class:'nav-link' %>
         </li>
         <li class="nav-item mx-5"></li>
-        <li class="nav-item">
-          <%= link_to 'Sign Up', :root, class:'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Sign In', :root, class:'nav-link' %>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item">
+            <%= link_to current_user.name, current_user, class:'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Log Out', logout_path, class:'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', signup_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign In', login_path, class:'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

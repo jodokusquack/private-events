@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user, except: [:new, :create]
 
   def index
-
+    @users = User.all
   end
 
   def show

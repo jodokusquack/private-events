@@ -1,13 +1,18 @@
 <div class="container mt-3">
-  <div class="row">
-    <div class="col">
-      <div class="card bg-light">
-        <div class="card-body">
-          <h2 class="card-title"><%= @user.name %></h2>
-          <p class="card-text">Email: <%= @user.email %></p>
-          <p class="card-text">Address: <%= @user.address %></p>
-        </div>
-      </div>
+  <div class="row bg-light rounded">
+    <div class="col-8 m-3">
+      <h2 class="title"><%= @user.name %></h2>
+      <p class="text">Email: <%= @user.email %></p>
+      <p class="text">Address: <%= @user.address %></p>
+      <hr>
+      <h3 class="subtitle">Your Events</h3>
+      <% if @user.events.empty? %>
+        <small class="text-muted">You haven't created any Events yet. Create one <%= link_to 'here', '#' %>.</small>
+      <% else %>
+        <ul class="list-group">
+          <%= render @user.events %>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>

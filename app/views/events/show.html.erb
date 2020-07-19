@@ -1,0 +1,24 @@
+<div class="container bg-light rounded">
+  <h2 class="title p-3"><%= @event.title %></h2>
+  <div class="row">
+    <div class="col-8 mx-3 border p-3 mb-3">
+      <small>Host:</small>
+      <p><%= link_to @event.host.name, @event.host %></p>
+      <small>Description:</small>
+      <p class="border p-3">
+        <%= @event.description %>
+      </p>
+
+      <small>Date:</small>
+      <p><%= @event.date.strftime('%B %d, %Y') %></p>
+
+      <small>Address:</small>
+      <p><%= @event.address %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 mb-3">
+      <%= link_to 'All Events', events_path %> | <%= link_to 'My Events', @event.host %>
+    </div>
+  </div>
+</div>

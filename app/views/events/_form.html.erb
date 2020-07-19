@@ -1,0 +1,30 @@
+<%# I have to set local to true, because otherwise the validations will not transfer to the client %>
+<%= form_with model: event, local: true, class:'form-signin' do |f| %>
+
+  <% if event.errors.any? %>
+    <%= render 'shared/error_messages', object: f.object %>
+  <% end %>
+
+  <div class="form-label-group">
+    <%= f.text_field :title, class: "form-control", placeholder: 'Title', autofocus: true %>
+    <%= f.label :title, 'Title' %>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Description', rows: 7 %>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.date_field :date, class:'form-control'%>
+    <%= f.label :date, 'Date' %>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.text_field :address, class:'form-control'%>
+    <%= f.label :address, 'Address' %>
+  </div>
+
+  <hr>
+
+  <%= f.submit 'Create Event', class: 'btn btn-primary btn-lg btn-block text-uppercase' %>
+<% end %>

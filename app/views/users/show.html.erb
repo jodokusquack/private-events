@@ -7,11 +7,12 @@
       <hr>
       <h3 class="subtitle">Your Events</h3>
       <% if @user.events.empty? %>
-        <small class="text-muted">You haven't created any Events yet. Create one <%= link_to 'here', '#' %>.</small>
+        <small class="text-muted">You haven't created any Events yet. Create one <%= link_to 'here', new_event_path %>.</small>
       <% else %>
         <ul class="list-group">
           <%= render @user.events %>
         </ul>
+        <%= link_to 'Create a New Event', new_event_path %>
       <% end %>
     </div>
   </div>

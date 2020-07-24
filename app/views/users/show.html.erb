@@ -1,6 +1,6 @@
-<div class="container mt-3">
-  <div class="row bg-light rounded">
-    <div class="col-8 m-3">
+<div class="container mt-3 bg-light rounded">
+  <div class="row">
+    <div class="col m-3">
       <h2 class="title"><%= @user.name %></h2>
       <p class="text">Email: <%= @user.email %></p>
       <p class="text">Address: <%= @user.address %></p>
@@ -16,4 +16,21 @@
       <% end %>
     </div>
   </div>
+  <% if @user == current_user %>
+  <hr>
+  <div class="row">
+    <div class="col m-3">
+      <h3 class="title">Your Invitations</h3>
+      <% if @user.attended_events.empty? %>
+        <p class="text-muted">You aren't invited to any Events at the moment. But soon...</p>
+      <% else %>
+        <% @user.attended_events.each do |event| %>
+          <ul class="list-group">
+            <%= render "events/event", event: event %>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 </div>

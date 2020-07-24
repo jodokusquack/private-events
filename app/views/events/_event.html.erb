@@ -1,4 +1,4 @@
-<li class="list-group-item">
+<li class="list-group-item mb-3">
   <%= link_to event.title, event %> <small>on</small> <%= event.date.strftime('%B %d, %Y') %><br>
   <small class="text-muted">by <%= link_to event.host.name, event.host, class:'alert-link text-muted'%></small>
 </li>

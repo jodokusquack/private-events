@@ -20,11 +20,25 @@
   <hr>
   <div class="row">
     <div class="col m-3">
-      <h3 class="title">Your Invitations</h3>
-      <% if @user.attended_events.empty? %>
-        <p class="text-muted">You aren't invited to any Events at the moment. But soon...</p>
+      <h3 class="title">Upcoming Events</h3>
+      <% if @upcoming_events.empty? %>
+        <p class="text-muted">You haven't got any upcoming Events at the moment.</p>
       <% else %>
-        <% @user.attended_events.each do |event| %>
+        <% @upcoming_events.each do |event| %>
+          <ul class="list-group">
+            <%= render "events/event", event: event %>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col m-3">
+      <h3 class="title">Previous Events</h3>
+      <% if @previous_events.empty? %>
+        <p class="text-muted">You haven't had any Events so far.</p>
+      <% else %>
+        <% @previous_events.each do |event| %>
           <ul class="list-group">
             <%= render "events/event", event: event %>
           </ul>

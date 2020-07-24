@@ -39,7 +39,7 @@
   <hr>
   <div class="row">
     <div class="col-8 mb-3">
-      <%= link_to 'All Events', events_path %> | <%= link_to 'My Events', @event.host %>
+      <%= link_to 'All Events', events_path %> | <%= link_to @event.host == current_user ? 'My Events':"#{@event.host.name}'s Events", @event.host %>
     </div>
   </div>
 </div>

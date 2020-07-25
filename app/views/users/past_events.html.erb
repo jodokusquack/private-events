@@ -1,0 +1,18 @@
+<div class="container mt-3 bg-light rounded">
+  <div class="row">
+    <div class="col m-3">
+      <h2 class="title">Your Past Events</h2>
+      <% if @user == current_user %>
+        <% if @past_events.empty? %>
+          <p class="text-muted">You haven't had any Events so far.</p>
+        <% else %>
+          <% @past_events.each do |event| %>
+            <ul class="list-group">
+              <%= render "events/event", event: event %>
+            </ul>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

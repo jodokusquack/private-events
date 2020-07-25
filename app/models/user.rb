@@ -12,7 +12,13 @@ class User < ApplicationRecord
   has_many :attended_events, through: :invitations, class_name: "Event", source: :event
 
 
-  def previous_events
+  def recent_events
+    # only the last 5 events
+    attended_events.where("date < :current_date", current_date: Date.today).order(date: :desc).limit(5)
+  end
+
+  def past_events
+    # all previous events
     attended_events.where("date < :current_date", current_date: Date.today).order(date: :desc)
   end
 

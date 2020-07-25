@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   resources :users, only: [:index, :show, :new, :create]
+  get 'users/:id/past_events', to: 'users#past_events', as: 'past_events'
 
   resources :events, only: [:index, :show, :new, :create]
 

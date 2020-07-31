@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  include UsersHelper
+
   before_action :authenticate_user, except: [:new, :create]
 
   def index
@@ -13,6 +16,11 @@ class UsersController < ApplicationController
 
   def past_events
     @user = User.find(params[:id])
+
+    unless is_requested_user?
+      flash[:alert] = "You do not have permission to view this page!"
+      redirect_to @user
+    end
     @past_events = @user.past_events
   end
 

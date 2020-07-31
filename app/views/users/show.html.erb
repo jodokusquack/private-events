@@ -16,7 +16,7 @@
       <% end %>
     </div>
   </div>
-  <% if @user == current_user %>
+  <% if is_requested_user? %>
     <hr>
     <div class="row">
       <div class="col m-3">

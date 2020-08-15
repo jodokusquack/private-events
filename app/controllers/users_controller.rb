@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = "User successfully created"
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       flash[:alert] = "There was an error while creating the User"
